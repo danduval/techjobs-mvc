@@ -10,7 +10,7 @@
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
-    <form th:action="@{/search/results}">
+    <form th:action="@{/search/results}" method="post">
         <h2>Search by:</h2>
 
         <p>
@@ -37,6 +37,20 @@
     <hr />
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
+
+    <!-- pseudo code version first:
+
+    for every job in jobs (a list of hashmaps passed in by the controller):
+    - make a table for every job (one hashmap per table)
+    - in each table, make a row for every key/value pair (one entry for every row)
+    - in each row, make two td elements, one for the key, one for the value
+
+    -->
+
+    <div th:replace="fragments :: job-listings"></div>
+
+
+
 
 </div>
 
